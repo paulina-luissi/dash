@@ -1,5 +1,5 @@
 import requests
-import pycountry_convert as pc
+#import pycountry_convert as pc
 import pandas as pd
 import numpy as np
 
@@ -57,12 +57,15 @@ app.title = "Tablero Predicción de Salarios"
 server = app.server
 
 # PREDICTION API URL 
-#api_url = os.getenv('API_URL')
-#api_url = "http://{}:8001/api/v1/predict".format(api_url)
+api_url = os.getenv('API_URL')
+#port = os.getenv('PORT')
+api_url = "https://{}/api/v1/predict".format(api_url)
+
+#api_url = "https://radiant-light-production.up.railway.app/api/v1/predict"
 
 # Pruebas en maquina local
-api_host = "127.0.0.1"  # Replace with the accessible IP address or hostname
-api_url = f"http://{api_host}:8001/api/v1/predict"
+#api_host = "127.0.0.1"  # Replace with the accessible IP address or hostname
+#api_url = f"http://{api_host}:8001/api/v1/predict"
 
 # app.config.suppress_callback_exceptions = True
 
